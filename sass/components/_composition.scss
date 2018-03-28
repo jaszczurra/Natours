@@ -1,0 +1,90 @@
+.composition {
+    position: relative;
+
+    @include respond(tab-port) {
+        margin-top: 3rem;
+    }
+
+    &__photo {
+        width: 55%;
+        box-shadow: $shadow-box;
+        border-radius: 2px;
+        position: absolute;
+        transition: all .2s;
+        outline-offset: 1rem; //offset between the border (outline) and the photo
+
+        @include respond(tab-port) {
+            width: 33.333%;
+            box-shadow: .3rem 1.5rem 3rem rgba($color-dark, .15);
+            position: relative;
+            float: left;
+        }
+
+        &:hover {
+            transform: scale(1.05) translateY(-.3rem);
+            box-shadow: 0.7rem 2.5rem 4rem rgba($color-dark, .4);
+            z-index: 1;
+            outline: 1.2rem solid $color-main; //border
+
+            @include respond(phone) {
+                transform: scale(1.3) translateY(0);
+                box-shadow: .3rem 1.5rem 3rem rgba($color-dark, .15);
+                z-index: 0;
+                outline: none;
+            }
+        }
+
+        &--p1 {
+            left: 1rem;
+            top: -2rem;
+
+            @include respond(tab-port) {
+                left: 0;
+                top: 1rem;
+                transform: scale(1.3);
+            }
+        }
+
+        &--p2 {
+            right: 0;
+            top: 2rem;
+
+            @include respond(tab-port) {
+                top: -1rem;
+                transform: scale(1.3);
+                z-index: 1;
+            }
+
+            &:hover {
+                @include respond(phone) {
+                    z-index: 1;
+                }
+            }
+        }
+
+        &--p3 {
+            left: 20%;
+            top: 10rem;
+
+            @include respond(tab-port) {
+                left: 0;
+                top: 2rem;
+                transform: scale(1.3);
+            }
+
+            &:hover {
+                @include respond(phone) {
+                    z-index: 0;
+                }
+            }
+        }
+    }
+
+    &:hover &__photo:not(:hover) {
+        transform: scale(.95);
+
+        @include respond(phone) {
+            transform: scale(1.3);
+        }
+    }
+}

@@ -1,0 +1,106 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 15rem 0 25rem 0;
+    margin-top: -10vh;
+    margin-bottom: -20vh;
+
+    @include respond(tab-port) {
+        padding: 13rem 0 30rem 0;
+    }
+    
+    @include respond(phone) {
+        padding: 13rem 0 28rem 0;
+    }
+}
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom, rgba($color-main, 0.9), rgba($color-supp-2, 0.8)), 
+                      url(../img/nat-4.jpg);
+    background-size: cover;
+    background-position: top;
+    -webkit-clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 50% 90%, 0 100%);
+    clip-path: polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 50% 90%, 0 100%);
+
+    @include respond(tab-port) {
+        -webkit-clip-path: polygon(0 6%, 50% 0, 100% 6%, 100% 100%, 50% 94%, 0 100%);
+        clip-path: polygon(0 6%, 50% 0, 100% 6%, 100% 100%, 50% 94%, 0 100%);
+        padding: 15rem 0;
+    } 
+
+    @include respond(phone) {
+        -webkit-clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 50% 96%, 0 100%);
+        clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 50% 96%, 0 100%);
+        padding: 12rem 0;
+    } 
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 15rem 0;
+    margin-top: -10vh;
+
+    @include respond(tab-port) {
+        padding: 15rem 0 10rem 0;
+    } 
+
+    @include respond(phone) {
+        padding: 12rem 0 8rem 0;
+    } 
+}
+
+.section-stories {
+    position: relative;
+    padding: 15rem 0;
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    } 
+}
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-main, $color-supp-2);
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }  
+}
+
+.book {
+    //background-image: linear-gradient(100deg, rgba($color-light, .95) 0%, rgba($color-light, .6) 45%, transparent 70%), 
+                        //url(../img/nat-10.jpg);
+    background-image: linear-gradient(100deg, rgba($color-light, .85) 0%, rgba($color-light, .85) 50%, transparent 50%), //SHARP EDGE BETEEN COLOR AND TRANSPARENT 
+                      url(../img/nat-10.jpg);
+    background-size: 100%;
+    background-position: center;
+    border-radius: 3px;
+    box-shadow: $shadow-box;
+
+    @include respond(tab-land) {
+        background-image: linear-gradient(100deg, rgba($color-light, .85) 0%, rgba($color-light, .85) 65%, transparent 65%), //SHARP EDGE BETEEN COLOR AND TRANSPARENT 
+                          url(../img/nat-10.jpg);
+        background-size: cover; 
+    }
+
+    @include respond(phone) {
+        background-image: linear-gradient(to right, rgba($color-light, .85) 0%, rgba($color-light, .85) 100%), //SHARP EDGE BETEEN COLOR AND TRANSPARENT 
+                          url(../img/nat-10.jpg);
+        background-size: cover; 
+    }
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 70%;
+            padding: 5rem;
+        }
+        
+        @include respond(phone) {
+            width: 100%;
+            padding: 5rem;
+        }
+    }
+}
